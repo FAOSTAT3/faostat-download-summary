@@ -33,8 +33,8 @@ define(['jquery',
         var _this = this;
 
         /* Test. */
-        var sel = new SELECTOR();
-        sel.init({
+        var sel_1 = new SELECTOR();
+        sel_1.init({
             placeholder_id: 'selector_1_placeholder',
             suffix: 'area',
             tabs :   [
@@ -49,6 +49,47 @@ define(['jquery',
                 {
                     label: 'Special Groups',
                     rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/1/3/E'
+                }
+            ]
+        });
+        var sel_2 = new SELECTOR();
+        sel_2.init({
+            placeholder_id: 'selector_2_placeholder',
+            suffix: 'element',
+            tabs :   [
+                {
+                    label: 'Elements',
+                    rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/2/1/E'
+                }
+            ]
+        });
+        var sel_3 = new SELECTOR();
+        sel_3.init({
+            placeholder_id: 'selector_3_placeholder',
+            suffix: 'item',
+            tabs :   [
+                {
+                    label: 'Items',
+                    rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/3/1/E'
+                },
+                {
+                    label: 'Item Aggregated',
+                    rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/3/2/E'
+                }
+            ]
+        });
+        var sel_4 = new SELECTOR();
+        sel_4.init({
+            placeholder_id: 'selector_4_placeholder',
+            suffix: 'year',
+            tabs :   [
+                {
+                    label: 'Years',
+                    rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/4/1/E'
+                },
+                {
+                    label: 'Year Projections',
+                    rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/4/2/E'
                 }
             ]
         });
