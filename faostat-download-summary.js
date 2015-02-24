@@ -1,9 +1,10 @@
 define(['jquery',
-    'handlebars',
-    'text!faostat_download_summary/html/templates.html',
-    'i18n!faostat_download_summary/nls/translate',
-    'bootstrap',
-    'sweet-alert'], function ($, Handlebars, templates, translate) {
+        'handlebars',
+        'text!faostat_download_summary/html/templates.html',
+        'i18n!faostat_download_summary/nls/translate',
+        '!faostat_download_selector/faostat-download-selector',
+        'bootstrap',
+        'sweet-alert'], function ($, Handlebars, templates, translate, SELECTOR) {
 
     'use strict';
 
@@ -30,6 +31,27 @@ define(['jquery',
 
         /* this... */
         var _this = this;
+
+        /* Test. */
+        var sel = new SELECTOR();
+        sel.init({
+            placeholder_id: 'selector_1_placeholder',
+            suffix: 'area',
+            tabs :   [
+                {
+                    label: 'Countries',
+                    rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/1/1/E'
+                },
+                {
+                    label: 'Regions',
+                    rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/1/2/E'
+                },
+                {
+                    label: 'Special Groups',
+                    rest: 'http://faostat3.fao.org/wds/rest/procedures/usp_GetListBox/faostatdb/GT/1/3/E'
+                }
+            ]
+        });
 
     };
 
